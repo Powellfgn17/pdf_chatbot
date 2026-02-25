@@ -1,0 +1,15 @@
+# Python env
+ml_env/
+.venv/
+venv/
+env/
+
+# cache
+__pycache__/
+*.pyc
+
+# secrets
+.env
+
+# vscode
+.vscode/
