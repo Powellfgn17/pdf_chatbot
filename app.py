@@ -35,7 +35,7 @@ st.title("🤖 AI Chatbot — Ask your PDF & CV")
 # ============================================================================
 
 # Load Groq API key from environment (.env file) or user input
-GROQ_API_KEY = os.getenv("api_key") or st.sidebar.text_input("Enter your Groq API Key", type="password")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 # File uploader widget for PDF documents
 uploaded_file = st.sidebar.file_uploader("Upload your PDF or CV", type="pdf")
