@@ -1,25 +1,25 @@
 # PDF Chatbot 🤖
 
-An intelligent PDF document Q&A application using **RAG (Retrieval-Augmented Generation)** with LangChain and Groq API.
+An intelligent PDF document Q&A application using RAG (Retrieval-Augmented Generation) with LangChain and Groq API.
 
 ## Features
 
-✨ **Smart Document Analysis**
+### ✨ Smart Document Analysis
 - Upload and analyze PDF files (CVs, reports, documents, etc.)
 - Ask natural language questions about your documents
 - Get accurate, context-aware responses
 
-🔍 **Advanced Retrieval**
+### 🔍 Advanced Retrieval
 - Semantic search using embeddings
 - FAISS vector store for efficient similarity search
 - Multi-document chunk retrieval for comprehensive context
 
-🚀 **Fast Performance**
+### 🚀 Fast Performance
 - Groq API for lightning-fast LLM inference
 - HuggingFace embeddings for semantic understanding
 - Real-time streaming responses
 
-💬 **Conversation History**
+### 💬 Conversation History
 - Maintains chat history within a session
 - Automatic reset when uploading a new document
 - File-aware conversation management
@@ -82,7 +82,7 @@ The app will open at `http://localhost:8501`
 
 ## Configuration
 
-### environment Variables (.env)
+### Environment Variables (.env)
 ```
 api_key=your_groq_api_key_here
 ```
@@ -130,10 +130,10 @@ Extracts text from PDF using PyPDF2.
 
 ### `build_chain(text, api_key)`
 Creates RAG chain:
-1. Splits document into chunks
-2. Generates embeddings
-3. Builds FAISS vector store
-4. Creates LCEL chain combining retrieval + LLM
+- Splits document into chunks
+- Generates embeddings
+- Builds FAISS vector store
+- Creates LCEL chain combining retrieval + LLM
 
 ### Session State Management
 - `messages`: Chat history
@@ -143,12 +143,12 @@ Creates RAG chain:
 
 ## Performance Tips
 
-⚡ **Optimization**
+### ⚡ Optimization
 - Uses CPU FAISS (install `faiss-gpu` for GPU acceleration)
 - HuggingFace embeddings are cached locally
 - Groq API provides sub-second inference
 
-🎯 **Best Practices**
+### 🎯 Best Practices
 - Keep chunk size between 500-2000 for balance
 - Use k=3-5 for retrieval to balance relevance/scope
 - Small PDFs (<500KB) work best for instant processing
@@ -193,7 +193,7 @@ Modify the `system_prompt` variable in `build_chain()` to change LLM behavior.
 
 ## Limitations
 
-⚠️ **Known Limitations**
+### ⚠️ Known Limitations
 - Cannot process image-based PDFs (OCR not implemented)
 - Limited to 500MB+ file sizes depending on memory
 - No support for multi-language documents (English optimized)
@@ -201,7 +201,7 @@ Modify the `system_prompt` variable in `build_chain()` to change LLM behavior.
 
 ## Future Enhancements
 
-📚 **Planned Features**
+### 📚 Planned Features
 - [ ] Multi-document Q&A
 - [ ] Persistent chat history (database)
 - [ ] OCR for image-based PDFs
