@@ -76,6 +76,7 @@ def build_chain(text, api_key):
 - For questions about content not in the document: explicitly state "This information is not in the document"
 - For general knowledge questions related to the document topic: provide answers but clarify: "This is from my general knowledge, not the document"
 - When asked for opinions ("what do you think?"), deliver a professional assessment grounded in document analysis
+- ALWAYS respond in the same language the user used to ask the question. If the user writes in French, respond in French. If in English, respond in English.
 
 Context:
 {context}
