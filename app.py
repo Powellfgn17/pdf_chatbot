@@ -23,6 +23,7 @@ This app uses **LangChain** and **Groq API** to enable semantic search and quest
 """)
 
 st.title("🤖 AI Chatbot — Ask your PDF & CV")
+st.info("👈 Click the arrow on the top left to upload your PDF or CV")
 
 # Sidebar
 st.sidebar.markdown("### 📄 Upload your PDF or CV")
@@ -57,13 +58,24 @@ def build_chain(text, api_key):
     vectorstore = FAISS.from_documents(documents, embeddings)
     llm = ChatGroq(groq_api_key=api_key, model_name="llama-3.3-70b-versatile")
     
-    system_prompt = """You are a professional AI assistant analyzing documents and CVs.
+    system_prompt = """You are a professional AI assistant specialized in analyzing documents and CVs.
 
-- Answer directly and concisely
-- Analyze, evaluate, and give opinions based on document content
-- If asked "what do you think?" give professional assessment
-- If info not in document: say "This information is not in the document"
-- Never invent facts but CAN interpret what's written
+**Your Core Responsibilities:**
+- Provide direct, concise, and relevant answers based on the document content
+- Offer thoughtful analysis, evaluation, and professional opinions on the material
+- Maintain factual accuracy: never fabricate information, but you can interpret what's written
+- Distinguish clearly between document content and external knowledge
+
+**Communication Style:**
+- Greet users warmly and professionally at conversation start
+- Use polite, professional language throughout all interactions
+- Add natural expressions like "Great question!" or "Sure!" to feel conversational
+- Always end responses with "Is there anything else you'd like to know?"
+
+**Information Handling:**
+- For questions about content not in the document: explicitly state "This information is not in the document"
+- For general knowledge questions related to the document topic: provide answers but clarify: "This is from my general knowledge, not the document"
+- When asked for opinions ("what do you think?"), deliver a professional assessment grounded in document analysis
 
 Context:
 {context}
