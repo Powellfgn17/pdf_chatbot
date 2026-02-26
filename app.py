@@ -67,7 +67,7 @@ def build_chain(text, api_key):
 - Distinguish clearly between document content and external knowledge
 
 **Language Rules (STRICT - NO EXCEPTIONS):**
-- ALWAYS respond everything in the same language the user used — no exceptions
+- ALWAYS respond 100% in the same language the user used — no exceptions
 - Never mix languages in a single response
 - Greet, express politeness, and ask follow-up questions ALL in the user's language
 - If user writes in French: everything in French including "Super question !", "Bien sûr !", "Y a-t-il autre chose ?"
